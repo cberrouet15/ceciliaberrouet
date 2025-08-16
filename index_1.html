@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cecilia Berrouet — Software Developer</title>
+  <meta name="description" content="Software developer with a biomedical research background. Portfolio, projects, blog, and contact information.">
+  <meta property="og:title" content="Cecilia Berrouet — Software Developer">
+  <meta property="og:description" content="Software developer with a biomedical research background. Portfolio, projects, blog, and contact information.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root{
+      --bg: #0d4f56; /* teal blue */
+      --card: #146c72;
+      --text: #e8ecf1;
+      --muted: #a9b3c2;
+      --accent: #5fd1d9;
+      --accent-2: #93e6b8;
+      --ring: rgba(95,209,217,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none;transition:color .2s ease}
+    a:hover{color:var(--accent-2);text-decoration:underline}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(13,79,86,1), rgba(13,79,86,.85));backdrop-filter: blur(8px);z-index:10;border-bottom:1px solid rgba(255,255,255,.06)}
+    header .inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:38px;height:38px;border-radius:10px;background:radial-gradient(120% 120% at 10% 10%, var(--accent), var(--accent-2));box-shadow:var(--shadow)}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{color:var(--text);opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:var(--accent);color:#0b1020;font-weight:600;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);transition:all .25s ease}
+    .btn.secondary{background:transparent;color:var(--text);border-color:rgba(255,255,255,.16)}
+    .btn:hover{background:var(--accent-2);color:#0b1020;transform:translateY(-2px);box-shadow:0 12px 20px rgba(0,0,0,.4)}
+    .btn.secondary:hover{background:rgba(95,209,217,.15);color:var(--accent)}
+
+    .hero{padding:80px 0}
+    .hero h1{font-size: clamp(28px, 5vw, 48px);line-height:1.1;margin:0 0 10px}
+    .hero p.lede{font-size: clamp(16px, 2.2vw, 20px);color:var(--muted);margin:0 0 20px}
+    .tag{display:inline-block;background:rgba(95,209,217,.12);color:var(--accent);border:1px solid var(--ring);padding:6px 10px;border-radius:999px;font-size:12px;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:34px 0}
+    section h2{font-size: clamp(22px, 3vw, 30px);margin:0 0 12px}
+    section p.sub{color:var(--muted);margin-top:0}
+
+    /* Project cards */
+    .project{display:flex;flex-direction:column;gap:10px}
+    .project h3{margin:0;font-size:18px}
+    .chip{display:inline-flex;gap:8px;flex-wrap:wrap}
+    .chip span{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+
+    /* List items */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list .item{padding:14px;border-radius:14px;border:1px dashed rgba(255,255,255,.14)}
+    .mono{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:14px}
+
+    /* Blog */
+    .blog{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .blog .index{grid-column: span 4}
+    .blog .content{grid-column: span 8}
+    .post-meta{color:var(--muted);font-size:14px;margin-top:-6px;margin-bottom:14px}
+    .md h1,.md h2,.md h3{line-height:1.2}
+    .md pre{padding:14px;background:#0b1020;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:auto}
+    .md code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .md img{max-width:100%;border-radius:12px}
+    .md blockquote{margin:0;padding:10px 14px;border-left:3px solid var(--accent);background:rgba(255,255,255,.03);border-radius:8px}
+    @media (max-width: 900px){
+      .blog .index{grid-column: span 12}
+      .blog .content{grid-column: span 12}
+    }
+
+    /* Footer */
+    footer{padding:50px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
+
+    /* Responsive */
+    @media (max-width: 760px){
+      nav{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Cecilia Berrouet",
+    "jobTitle": "Software Developer",
+    "url": "https://your-domain.com",
+    "sameAs": [
+      "https://github.com/yourhandle",
+      "https://www.linkedin.com/in/your-handle"
+    ]
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <strong>Cecilia Berrouet</strong>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Blog</a>
+        <a href="#contact" class="btn secondary">Contact</a>
+      </nav>
+      <a class="btn" href="#contact">Let’s Talk</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <span class="tag">Software Developer • CS M.S. • Biomedical Research Background</span>
+      <h1>Building clean, reliable software — bringing a research mindset from biomedicine to tech.</h1>
+      <p class="lede">I’m a software developer and M.S. in Computer Science student focused on data‑driven applications. Previously in biomedical research, I translate experimentation, rigor, and documentation into production‑grade code.</p>
+      <div class="grid" style="grid-template-columns: repeat(12, 1fr);align-items:start">
+        <div class="card" style="grid-column: span 7">
+          <h2 style="margin-top:0">What I’m looking for</h2>
+          <p class="sub">Software engineering roles (backend, data, or full‑stack). Open to internships, contract, or full‑time.</p>
+          <div class="chip" aria-label="Skills">
+            <span>Python</span><span>JavaScript</span><span>SQL</span><span>APIs</span><span>Flask/FastAPI</span><span>React</span><span>Git/GitHub</span>
+          </div>
+        </div>
+        <div class="card" style="grid-column: span 5">
+          <h2 style="margin-top:0">Quick links</h2>
+          <div class="list">
+            <div class="item"><strong>Resume:</strong> <a href="#">/Cecilia_Berrouet_Resume.pdf</a> <span class="mono">(add file)</span></div>
+            <div class="item"><strong>GitHub:</strong> <a href="https://github.com/yourhandle">github.com/yourhandle</a></div>
+            <div class="item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>I build software that’s easy to maintain and a pleasure to use. My background in biomedical research trained me to design experiments, analyze data, and document precisely — habits I bring to every pull request. Currently finishing my M.S. in Computer Science while shipping projects and collaborating with teams.</p>
+      <ul>
+        <li><strong>Strengths:</strong> Clear communication, test‑first mindset, data intuition, cross‑disciplinary problem solving.</li>
+        <li><strong>Interests:</strong> Data engineering, developer tooling, ML‑adjacent apps, and health tech.</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Don’t have polished projects yet? No problem — publish small, real things. Replace the placeholders below as you go.</p>
+      <div class="grid" style="grid-template-columns: repeat(12, 1fr)">
+        <article class="card project" style="grid-column: span 6">
+          <h3>API Microsvc Starter <span class="mono">(Placeholder)</span></h3>
+          <p>Minimal FastAPI service with structured logging, health checks, Dockerfile, and CI linting. Great base for coding challenges and prototypes.</p>
+          <div class="chip"><span>Python</span><span>FastAPI</span><span>Docker</span><span>CI</span></div>
+          <p><a href="#">Repo</a> • <a href="#">Live</a></p>
+        </article>
+        <article class="card project" style="grid-column: span 6">
+          <h3>Data Notebook: NYC Open Data <span class="mono">(Placeholder)</span></h3>
+          <p>Exploratory analysis notebook on a public dataset (cleaning → EDA → simple model). Shows data literacy and communication.</p>
+          <div class="chip"><span>Python</span><span>Pandas</span><span>SQL</span></div>
+          <p><a href="#">Repo/Notebook</a></p>
+        </article>
+        <article class="card project" style="grid-column: span 6">
+          <h3>Mini Full‑Stack: Notes App <span class="mono">(Placeholder)</span></h3>
+          <p>Simple CRUD app with auth; deploy on Vercel/Render. Demonstrates API design, state management, and deploys.</p>
+          <div class="chip"><span>React</span><span>Node</span><span>Auth</span></div>
+          <p><a href="#">Repo</a> • <a href="#">Live</a></p>
+        </article>
+        <article class="card project" style="grid-column: span 6">
+          <h3>Research → Code Blog <span class="mono">(Starter)</span></h3>
+          <p>Short posts translating research skills to engineering (e.g., “A/B tests as experiments”, “Lab notebooks → README.md”).</p>
+          <div class="chip"><span>Writing</span><span>Documentation</span></div>
+          <p><a href="#writing">See posts</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="writing">
+      <h2>Blog</h2>
+      <p class="sub">Markdown‑powered posts. Drop <code>.md</code> files into a <span class="mono">/posts</span> folder and register them in the list below.</p>
+
+      <div class="blog">
+        <!-- LEFT: INDEX -->
+        <aside class="card index" aria-label="Blog index">
+          <ol id="post-list" class="list" style="list-style: none; padding-left:0; margin:0"></ol>
+        </aside>
+
+        <!-- RIGHT: CONTENT -->
+        <article class="card content">
+          <div id="post-container" class="md">
+            <h3>Welcome!</h3>
+            <p>Select a post on the left — or visit <span class="mono">#post/debug-like-a-scientist</span> to see a sample. To publish, create a <span class="mono">/posts</span> folder and add Markdown files (e.g., <span class="mono">debug-like-a-scientist.md</span>).</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Reach out for roles, collaborations, or questions.</p>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:hello@your-domain.com">hello@your-domain.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/yourhandle">github.com/yourhandle</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Cecilia Berrouet — Built with vanilla HTML/CSS</div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- Simple Markdown Blog Engine ---
+    // 1) Add your posts (slug, title, date) here
+    const POSTS = [
+      { slug: 'debug-like-a-scientist', title: 'Debugging Like a Scientist', date: '2025-08-01' },
+      { slug: 'readme-driven-development', title: 'README-Driven Development as a Lab Notebook', date: '2025-08-05' }
+    ];
+
+    // 2) Create files at /posts/<slug>.md
+    // Example: /posts/debug-like-a-scientist.md
+
+    const $list = document.getElementById('post-list');
+    const $container = document.getElementById('post-container');
+
+    function renderIndex(){
+      if(!$list) return; // in case section is removed
+      $list.innerHTML = '';
+      // newest first
+      const sorted = [...POSTS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+      for(const p of sorted){
+        const li = document.createElement('li');
+        li.className = 'item';
+        li.innerHTML = `<a href="#post/${p.slug}"><strong>${p.title}</strong></a><div class="post-meta">${new Date(p.date).toLocaleDateString()}</div>`;
+        $list.appendChild(li);
+      }
+    }
+
+    async function fetchMarkdown(slug){
+      try{
+        const res = await fetch(`/posts/${slug}.md`);
+        if(!res.ok) throw new Error('Missing file');
+        return await res.text();
+      }catch(e){
+        // Fallback sample content if file not found
+        if(slug === 'debug-like-a-scientist'){
+          return `# Debugging Like a Scientist\n\nWhen something breaks, form a hypothesis, change **one variable** at a time, and write down outcomes.\n\n- Reproduce the bug reliably\n- Isolate the smallest failing case\n- Log *inputs*, *state*, and *assumptions*\n\n\`\`\`bash\npytest -k failing_test -vv\n\`\`\`\n\n> Experiments aren\'t failures — they\'re data.`;
+        }
+        return `# Post not found\n\nCreate **/posts/${slug}.md** to publish this article.`;
+      }
+    }
+
+    function renderMarkdown(md){
+      // Using marked.js for robust Markdown → HTML
+      return marked.parse(md, { mangle: false, headerIds: true });
+    }
+
+    async function renderPost(slug){
+      if(!$container) return;
+      const meta = POSTS.find(p=>p.slug===slug);
+      const md = await fetchMarkdown(slug);
+      const html = renderMarkdown(md);
+      const title = meta?.title || slug;
+      const date = meta?.date ? new Date(meta.date).toLocaleDateString() : '';
+      $container.innerHTML = `<h2>${title}</h2>${date?`<div class='post-meta'>${date}</div>`:''}${html}`;
+      document.title = `${title} — Cecilia Berrouet`;
+    }
+
+    function route(){
+      const hash = location.hash || '';
+      const m = hash.match(/^#post\/([A-Za-z0-9\-_.]+)/);
+      if(m){
+        renderPost(m[1]);
+      }else{
+        // default view
+        document.title = 'Cecilia Berrouet — Software Developer';
+      }
+    }
+
+    window.addEventListener('hashchange', route);
+    renderIndex();
+    route();
+  </script>
+</body>
+</html>
