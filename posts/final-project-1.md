@@ -1,5 +1,5 @@
-🚧 Wrapping up my **MSc Computer Science final project**!  
+📚 With six months left in my **MSc Computer Science final project**, I’m currently deep in the **literature review stage**.  
 
-I’ve been working on applying **semi-supervised learning (SSL)** to the challenge of **food image classification** — a domain where labeling data is expensive and images are highly variable. The project explores how SSL methods like pseudo-labeling, consistency regularization, and GAN-based augmentation can bridge the gap between limited labeled data and real-world complexity.  
+My research explores how **semi-supervised learning (SSL)** can be applied to the challenge of **food image classification** — a domain where labeling is costly and food images are highly variable. I’m examining methods like pseudo-labeling, consistency regularization, and GAN-based augmentation to understand their potential for reducing reliance on large labeled datasets.  
 
-It’s been exciting but also full of challenges: noisy labels, generalization issues, and computational trade-offs. Looking forward to finishing strong and sharing more soon! 🚀  
+It’s still early days, but I’m excited to build on this foundation and begin implementation in the months ahead. 🚀  
