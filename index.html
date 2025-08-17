@@ -260,19 +260,42 @@ At the end of the day, I’m excited by projects that bring people together — 
       }
     }
 
-    async function fetchMarkdown(slug){
-      try{
-        const res = await fetch(`/posts/${slug}.md`);
-        if(!res.ok) throw new Error('Missing file');
-        return await res.text();
-      }catch(e){
-        // Fallback sample content if file not found
-        if(slug === 'debug-like-a-scientist'){
-          return `# Debugging Like a Scientist\n\nWhen something breaks, form a hypothesis, change **one variable** at a time, and write down outcomes.\n\n- Reproduce the bug reliably\n- Isolate the smallest failing case\n- Log *inputs*, *state*, and *assumptions*\n\n\`\`\`bash\npytest -k failing_test -vv\n\`\`\`\n\n> Experiments aren\'t failures — they\'re data.`;
-        }
-        return `# Post not found\n\nCreate **/posts/${slug}.md** to publish this article.`;
-      }
+    
+function postsBase() {
+  // strip filename if present so we’re left with a trailing “/”
+  const base = location.pathname.replace(/[^/]*$/, '');
+  // ensure single trailing slash, then append "posts/"
+  return (base.endsWith('/') ? base : base + '/') + 'posts/';
+}
+
+async function fetchMarkdown(slug){
+  try{
+    const url = postsBase() + `${slug}.md`;
+    const res = await fetch(url, { cache: 'no-cache' });
+    if(!res.ok) throw new Error(`Missing file: ${url}`);
+    return await res.text();
+  }catch(e){
+    console.error(e);
+    if(slug === 'debug-like-a-scientist'){
+      return `# Debugging Like a Scientist
+
+When something breaks, form a hypothesis, change **one variable** at a time, and write down outcomes.
+
+- Reproduce the bug reliably
+- Isolate the smallest failing case
+- Log *inputs*, *state*, and *assumptions*
+
+\`\`\`bash
+pytest -k failing_test -vv
+\`\`\`
+
+> Experiments aren't failures — they're data.`;
     }
+    return `# Post not found
+
+Create **/posts/${slug}.md** to publish this article.`;
+  }
+}
 
     function renderMarkdown(md){
       // Using marked.js for robust Markdown → HTML
@@ -308,6 +331,7 @@ At the end of the day, I’m excited by projects that bring people together — 
 </body>
 
 </html>
+
 
 
 
